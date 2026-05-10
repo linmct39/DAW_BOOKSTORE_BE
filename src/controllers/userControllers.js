@@ -1,6 +1,5 @@
-import { transporter } from "./email.js";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken"; // Đảm bảo bạn đã cài và import jwt
+
 import db from "../config/db.js";
 
 // 1. Lấy danh sách tất cả user
