@@ -7,6 +7,7 @@ class BookBase(BaseModel):
     title: str = Field(..., max_length=200)
     author: str | None = Field(default=None, max_length=120)
     description: str | None = None
+    image_url: str | None = Field(default=None, max_length=500)
     price: float = Field(..., ge=0)
     category_id: int
 
@@ -19,6 +20,7 @@ class BookUpdate(BaseModel):
     title: str | None = Field(default=None, max_length=200)
     author: str | None = Field(default=None, max_length=120)
     description: str | None = None
+    image_url: str | None = Field(default=None, max_length=500)
     price: float | None = Field(default=None, ge=0)
     category_id: int | None = None
 
