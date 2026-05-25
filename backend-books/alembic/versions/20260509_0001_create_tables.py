@@ -32,6 +32,7 @@ def upgrade() -> None:
         sa.Column("title", sa.String(length=200), nullable=False),
         sa.Column("author", sa.String(length=120), nullable=True),
         sa.Column("description", sa.Text(), nullable=True),
+        sa.Column("image_url", sa.String(length=500), nullable=True),
         sa.Column("price", sa.Numeric(10, 2), nullable=False),
         sa.Column("category_id", sa.Integer(), nullable=False),
         sa.ForeignKeyConstraint(["category_id"], ["categories.id"], ondelete="CASCADE"),

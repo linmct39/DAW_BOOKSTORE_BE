@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS books (
   title VARCHAR(200) NOT NULL,
   author VARCHAR(120) NULL,
   description TEXT NULL,
+  image_url VARCHAR(500) NULL,
   price DECIMAL(10, 2) NOT NULL DEFAULT 0,
   category_id INT NOT NULL,
   INDEX ix_books_id (id),

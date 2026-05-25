@@ -16,12 +16,13 @@ VALUES
   ('Business', 'Management and entrepreneurship')
 ON DUPLICATE KEY UPDATE description = VALUES(description);
 
-INSERT INTO books (title, author, description, price, category_id)
+INSERT INTO books (title, author, description, image_url, price, category_id)
 VALUES
   (
     'Clean Code',
     'Robert C. Martin',
     'A handbook of agile software craftsmanship',
+    'https://example.com/images/clean-code.jpg',
     19.99,
     (SELECT id FROM categories WHERE name = 'Programming' LIMIT 1)
   ),
@@ -29,6 +30,7 @@ VALUES
     'The Pragmatic Programmer',
     'Andrew Hunt',
     'Journey to mastery in software development',
+    'https://example.com/images/pragmatic-programmer.jpg',
     24.50,
     (SELECT id FROM categories WHERE name = 'Programming' LIMIT 1)
   ),
@@ -36,6 +38,7 @@ VALUES
     'The Lean Startup',
     'Eric Ries',
     'Innovation and entrepreneurship strategy',
+    'https://example.com/images/the-lean-startup.jpg',
     15.75,
     (SELECT id FROM categories WHERE name = 'Business' LIMIT 1)
   ),
@@ -43,6 +46,7 @@ VALUES
     '1984',
     'George Orwell',
     'Dystopian classic novel',
+    'https://example.com/images/1984.jpg',
     9.99,
     (SELECT id FROM categories WHERE name = 'Fiction' LIMIT 1)
   )
